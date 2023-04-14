@@ -28,7 +28,7 @@ public class Menu {
      * að bæta svo á ObservableList listann að nafni
      * veitingar.
      */
-    public void setGogn() {
+    public void setData() {
         Meals margherita = new Meals("Margherita pizza, 16'", 1690);
         meals.add(margherita);
         Meals hawaiian = new Meals("Hawaiian pizza, 16'", 1890);

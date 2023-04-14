@@ -21,15 +21,15 @@ import javafx.collections.ObservableList;
 
 public class Cart extends Menu {
     private ObservableList<Meals> cart = FXCollections.observableArrayList();
-    private final IntegerProperty finalCost = new SimpleIntegerProperty(0);
+    private final IntegerProperty totalPrice = new SimpleIntegerProperty(0);
 
     /**
      * Skilar heiltölueiginleika sem heildarverð
      *
      * @return - Skilar heildarverði
      */
-    public IntegerProperty finalCostProperty() {
-        return finalCost;
+    public IntegerProperty totalPriceProperty() {
+        return totalPrice;
     }
 
     /**
@@ -40,7 +40,7 @@ public class Cart extends Menu {
         cart.addListener((ListChangeListener<Meals>) c -> {
             while (c.next()) {
                 if (c.wasAdded() || c.wasRemoved()) {
-                    updateFinalCost();
+                    updateTotalPrice();
                 }
             }
         });
@@ -50,12 +50,12 @@ public class Cart extends Menu {
      * Aðferð til að reikna heildarverð körfu. Leggur
      * saman verð allra veitinga í körfu.
      */
-    private void updateFinalCost() {
+    private void updateTotalPrice() {
         int total = 0;
         for (Meals m : cart) {
             total += m.getPrice();
         }
-        finalCost.set(total);
+        totalPrice.set(total);
     }
 
     /**
@@ -74,7 +74,7 @@ public class Cart extends Menu {
      *
      * @return - Skilar heildarverði.
      */
-    public IntegerProperty getFinalCost() {
-        return finalCost;
+    public IntegerProperty getTotalPrice() {
+        return totalPrice;
     }
 }

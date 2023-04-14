@@ -27,8 +27,8 @@ public class Customer {
      * Tekur ákvarðaða nafn og heimilisfang viðskiptavins
      * og lætur breyturnar verða að breytum klasans.
      *
-     * @param nameProperty  - Nafn viðskiptavins, sláð inn í vidskiptavinur-view.fxml
-     * @param addressProperty - Heimilisfang viðskiptavins, sláð inn í vidskiptavinur-view.fxml
+     * @param nameProperty    - Nafn viðskiptavins, sláð inn í customer-view.fxml
+     * @param addressProperty - Heimilisfang viðskiptavins, sláð inn í customer-view.fxml
      */
     public Customer(String nameProperty, String addressProperty) {
         this.nameProperty = new SimpleStringProperty(nameProperty);
@@ -51,7 +51,7 @@ public class Customer {
     /**
      * Aðferð til að sækja heimilisfang viðskiptavins.
      *
-     * @return - Skilar heimilisfangi, ákvarðað í vidskiptavinur-view.fxml
+     * @return - Skilar heimilisfangi, ákvarðað í customer-view.fxml
      */
     public String getAddress() {
         return addressProperty.get();
@@ -60,7 +60,7 @@ public class Customer {
     /**
      * Aðferð til að sækja nafn viðskiptavins.
      *
-     * @return Skilar nafni viðskiptavins, ákvarðað í vidskiptavinur-view.fxml
+     * @return Skilar nafni viðskiptavins, ákvarðað í customer-view.fxml
      */
     public String getName() {
         return nameProperty.get();

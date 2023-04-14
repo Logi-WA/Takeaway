@@ -5,14 +5,14 @@
 <?import javafx.scene.text.*?>
 <AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: lightgrey;"
             xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="is.vidmot.GreidslaController">
+            fx:controller="is.vidmot.PaymentController">
     <children>
-        <Label fx:id="fxTimi" layoutX="23.0" layoutY="115.0">
+        <Label fx:id="fxTime" layoutX="23.0" layoutY="115.0">
             <font>
                 <Font name="Calibri Bold" size="24.0"/>
             </font>
         </Label>
-        <Label fx:id="fxVerd" layoutX="23.0" layoutY="222.0">
+        <Label fx:id="fxPrice" layoutX="23.0" layoutY="222.0">
             <font>
                 <Font name="Calibri Bold" size="24.0"/>
             </font>
@@ -20,20 +20,20 @@
         <Button layoutX="30.0" layoutY="434.0" mnemonicParsing="false" onAction="#fxCancel" prefHeight="33.0"
                 prefWidth="80.0"
                 style="-fx-background-radius: 30; -fx-background-insets: 0; -fx-background-color: orangered;"
-                text="Til baka" textFill="WHITE">
+                text="Cancel" textFill="WHITE">
             <font>
                 <Font name="Calibri Bold" size="14.0"/>
             </font>
         </Button>
-        <Text layoutX="364.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Takk fyrir">
+        <Text layoutX="364.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thank you">
             <font>
                 <Font name="Calibri Bold" size="18.0"/>
             </font>
         </Text>
-        <Button fx:id="fxConfirm" layoutX="339.0" layoutY="417.0" mnemonicParsing="false" onAction="#fxStadfestaHandler"
+        <Button fx:id="fxConfirm" layoutX="339.0" layoutY="417.0" mnemonicParsing="false" onAction="#fxConfirmHandler"
                 prefHeight="50.1" prefWidth="120.0"
                 style="-fx-background-radius: 30; -fx-background-insets: 0; -fx-background-color: lime;"
-                text="Staðfesta" textFill="WHITE">
+                text="Confirm" textFill="WHITE">
             <font>
                 <Font name="Calibri Bold" size="22.0"/>
             </font>

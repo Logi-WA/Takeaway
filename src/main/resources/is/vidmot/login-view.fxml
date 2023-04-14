@@ -9,7 +9,7 @@
             xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="is.vidmot.PasswordController">
     <children>
-        <PasswordField layoutX="31.0" layoutY="114.0" prefHeight="50.0" prefWidth="271.5" promptText="Lykilorð"
+        <PasswordField layoutX="31.0" layoutY="114.0" prefHeight="50.0" prefWidth="271.5" promptText="Password"
                        style="-fx-background-color: white; -fx-background-radius: 0; -fx-border-color: gray; -fx-border-width: 1.5;">
             <font>
                 <Font size="20.0"/>
@@ -22,14 +22,14 @@
         </Label>
         <Button layoutX="357.0" layoutY="426.0" mnemonicParsing="false" onAction="#fxCancel1" prefHeight="40.0"
                 prefWidth="103.6"
-                style="-fx-background-color: gray; -fx-background-radius: 0; -fx-background-insets: 0;" text="Í lagi">
+                style="-fx-background-color: gray; -fx-background-radius: 0; -fx-background-insets: 0;" text="Ok">
             <font>
                 <Font name="Calibri Bold" size="18.0"/>
             </font>
         </Button>
         <Button layoutX="222.0" layoutY="426.0" mnemonicParsing="false" onAction="#fxCancel" prefHeight="40.0"
                 prefWidth="103.6"
-                style="-fx-background-color: gray; -fx-background-radius: 0; -fx-background-insets: 0;" text="Til Baka">
+                style="-fx-background-color: gray; -fx-background-radius: 0; -fx-background-insets: 0;" text="Cancel">
             <font>
                 <Font name="Calibri Bold" size="18.0"/>
             </font>

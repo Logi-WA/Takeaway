@@ -1,8 +1,8 @@
 package is.vidmot;
 
 import is.vinnsla.Cart;
-import is.vinnsla.Meals;
 import is.vinnsla.Customer;
+import is.vinnsla.Meals;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
@@ -25,20 +25,20 @@ import javafx.scene.control.ListView;
  *
  *****************************************************************************/
 
-public class PontunController {
+public class OrderController {
     //Viðmótsbreytur
     public Hyperlink fxHyperText;
     public Label fxWarning;
     @FXML
-    private MatsedillView matsedillView;
+    private MenuView menuView;
     @FXML
-    private ListView<Meals> karfaListView;
+    private ListView<Meals> cartListView;
     @FXML
-    private Label heildarVerdLabel;
+    private Label totalPriceLabel;
 
     //Tengsl við vinnslu
-    private Cart karfa;
-    private Customer vidskiptavinur;
+    private Cart cart;
+    private Customer customer;
 
 
     /**
@@ -48,11 +48,11 @@ public class PontunController {
      * @param event - atburðurinn sem viðmótshluturinn fékk
      */
     @FXML
-    private void fxSetjaKorfuHandler(ActionEvent event) {
-        Meals selectedMeal = matsedillView.getSelectionModel().getSelectedItem();
-        karfaListView.setItems(karfa.getKarfa());
+    private void fxPutInCartHandler(ActionEvent event) {
+        Meals selectedMeal = menuView.getSelectionModel().getSelectedItem();
+        cartListView.setItems(cart.getCart());
         if (selectedMeal != null) {
-            karfa.getKarfa().add(selectedMeal);
+            cart.getCart().add(selectedMeal);
         }
     }
 
@@ -64,19 +64,19 @@ public class PontunController {
      * @param event - atburðurinn sem viðmótshluturinn fékk.
      */
     @FXML
-    private void fxTakaKorfuHandler(ActionEvent event) {
-        if (karfaListView.getSelectionModel().getSelectedItems() != null)
-            karfaListView.getItems().remove(karfaListView.getSelectionModel().getSelectedItem());
+    private void fxRemoveFromCartHandler(ActionEvent event) {
+        if (cartListView.getSelectionModel().getSelectedItems() != null)
+            cartListView.getItems().remove(cartListView.getSelectionModel().getSelectedItem());
     }
 
     /**
      * Notað til þess að tengja viðskiptavin úr VidskiptavinurDialog hingað
      * og gerir hann nothæfan hér.
      *
-     * @param vidskiptavinur - Viðskiptavins-hlutur til að ákvarða viðskiptavin klasans.
+     * @param customer - Viðskiptavins-hlutur til að ákvarða viðskiptavin klasans.
      */
-    public void setVidskiptavinur(Customer vidskiptavinur) {
-        this.vidskiptavinur = vidskiptavinur;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     /**
@@ -87,9 +87,9 @@ public class PontunController {
      *
      * @param actionEvent atburðurinn sem viðmótshluturinn fekk.
      */
-    public void fxInnskr(ActionEvent actionEvent) {
-        if (vidskiptavinur == null) {
-            ViewSwitcher.switchTo(View.VIDSKIPTAVINUR);
+    public void fxLogIn(ActionEvent actionEvent) {
+        if (customer == null) {
+            ViewSwitcher.switchTo(View.CUSTOMER);
         } else {
             ViewSwitcher.switchTo(View.PASSWORD);
         }
@@ -101,11 +101,11 @@ public class PontunController {
      * veitingar körfunnar.
      */
     public void initialize() {
-        karfa = new Cart();
-        karfa.getHeildarVerd().addListener((observable, oldValue, newValue) -> {
-            heildarVerdLabel.textProperty().bind(karfa.heildarVerdProperty().asString().concat("kr."));
+        cart = new Cart();
+        cart.getTotalPrice().addListener((observable, oldValue, newValue) -> {
+            totalPriceLabel.textProperty().bind(cart.totalPriceProperty().asString().concat("kr."));
         });
-        karfaListView.setItems(karfa.getVeitingar());
+        cartListView.setItems(cart.getMeals());
     }
 
     /**
@@ -116,21 +116,21 @@ public class PontunController {
      *
      * @param actionEvent - atburðurinn sem viðmótshluturinn fékk.
      */
-    public void fxGreidslaHandler(ActionEvent actionEvent) {
-        if (vidskiptavinur == null) {
+    public void fxPaymentHandler(ActionEvent actionEvent) {
+        if (customer == null) {
             fxWarning.setOpacity(1.0);
         } else {
-            ViewSwitcher.switchTo(View.GREIDSLA);
+            ViewSwitcher.switchTo(View.PAYMENT);
         }
     }
 
     /**
      * Aðferð til að sækja körfu.
      *
-     * @return - Skilar körfuhlutinum karfa.
+     * @return - Skilar körfuhlutinum cart.
      */
-    public Cart getKarfa() {
-        return karfa;
+    public Cart getCart() {
+        return cart;
     }
 
     /**
@@ -138,7 +138,7 @@ public class PontunController {
      *
      * @return - Skilar viðskiptavins-hlutinum viðskiptavinur
      */
-    public Customer getVidskiptavinur() {
-        return vidskiptavinur;
+    public Customer getCustomer() {
+        return customer;
     }
 }
