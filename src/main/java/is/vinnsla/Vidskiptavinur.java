@@ -17,22 +17,22 @@ import javafx.beans.property.StringProperty;
  *
  *****************************************************************************/
 
-public class Customer {
+public class Vidskiptavinur {
     //tilviksbreytur
-    private StringProperty nameProperty;// = new SimpleStringProperty();
-    private StringProperty addressProperty;// = new SimpleStringProperty();
+    private StringProperty nafn;// = new SimpleStringProperty();
+    private StringProperty hFang;// = new SimpleStringProperty();
 
     /**
      * Smiður til að skilgreina nýjan viðskiptavin.
      * Tekur ákvarðaða nafn og heimilisfang viðskiptavins
      * og lætur breyturnar verða að breytum klasans.
      *
-     * @param nameProperty  - Nafn viðskiptavins, sláð inn í vidskiptavinur-view.fxml
-     * @param addressProperty - Heimilisfang viðskiptavins, sláð inn í vidskiptavinur-view.fxml
+     * @param nafn  - Nafn viðskiptavins, sláð inn í vidskiptavinur-view.fxml
+     * @param hFang - Heimilisfang viðskiptavins, sláð inn í vidskiptavinur-view.fxml
      */
-    public Customer(String nameProperty, String addressProperty) {
-        this.nameProperty = new SimpleStringProperty(nameProperty);
-        this.addressProperty = new SimpleStringProperty(addressProperty);
+    public Vidskiptavinur(String nafn, String hFang) {
+        this.nafn = new SimpleStringProperty(nafn);
+        this.hFang = new SimpleStringProperty(hFang);
     }
 
     /**
@@ -42,9 +42,9 @@ public class Customer {
      * og heimilisfang með kommu á milli þeirra.
      */
     public String toString() {
-        return "Customer{" +
-                "Name=" + nameProperty +
-                ", Address=" + addressProperty +
+        return "Vidskiptavinur{" +
+                "nafn=" + nafn +
+                ", hFang=" + hFang +
                 '}';
     }
 
@@ -53,8 +53,8 @@ public class Customer {
      *
      * @return - Skilar heimilisfangi, ákvarðað í vidskiptavinur-view.fxml
      */
-    public String getAddress() {
-        return addressProperty.get();
+    public String gethFang() {
+        return hFang.get();
     }
 
     /**
@@ -62,8 +62,8 @@ public class Customer {
      *
      * @return Skilar nafni viðskiptavins, ákvarðað í vidskiptavinur-view.fxml
      */
-    public String getName() {
-        return nameProperty.get();
+    public String getNafn() {
+        return nafn.get();
     }
 
     /**
@@ -71,7 +71,7 @@ public class Customer {
      *
      * @return - Skilar StringProperty-inu nafn.
      */
-    public StringProperty nameProperty() {
-        return nameProperty;
+    public StringProperty nafnProperty() {
+        return nafn;
     }
 }

@@ -1,6 +1,6 @@
 package is.vidmot;
 
-import is.vinnsla.Customer;
+import is.vinnsla.Vidskiptavinur;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -33,7 +33,7 @@ public class VidskiptavinurDialog {
     @FXML
     public Button fxCancel;
     //Tengsl við vinnslu
-    private Customer vidskiptavinur;
+    private Vidskiptavinur vidskiptavinur;
 
     /**
      * Þegar ýtt er á takkann til að halda áfram þá er tekið nafn
@@ -47,7 +47,7 @@ public class VidskiptavinurDialog {
     private void fxOk() {
         String name = fxName.getText();
         String address = fxAddress.getText();
-        Customer vidskiptavinur = new Customer(name, address);
+        Vidskiptavinur vidskiptavinur = new Vidskiptavinur(name, address);
         PontunController pontunController = (PontunController) ViewSwitcher.controllers.get(View.PONTUN);
         pontunController.setVidskiptavinur(vidskiptavinur);
         pontunController.fxHyperText.setText("Velkomin " + vidskiptavinur.getNafn());

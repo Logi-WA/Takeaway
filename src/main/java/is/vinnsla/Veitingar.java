@@ -14,10 +14,10 @@ package is.vinnsla;
  *
  *****************************************************************************/
 
-public class Meals {
+public class Veitingar {
     //tilviksbreytur
-    private String meal;
-    private int price;
+    private String veiting;
+    private int verd;
 
     /**
      * Aðferð til að skilgreina nýja veitingu. Tekur inn
@@ -26,20 +26,20 @@ public class Meals {
      * við á listann með setGogn() í Matsedill áður en maður
      * ætlar að gera nýja veitingu
      *
-     * @param meal - Strengur sem á að vera heiti veitingar.
-     * @param price    - Heiltala sem á að vera verð veitingar.
+     * @param veiting - Strengur sem á að vera heiti veitingar.
+     * @param verd    - Heiltala sem á að vera verð veitingar.
      */
-    public Meals(String meal, int price) {
-        this.meal = meal;
-        this.price = price;
+    public Veitingar(String veiting, int verd) {
+        this.veiting = veiting;
+        this.verd = verd;
     }
 
     /**
      * Aðferð til að sækja verð veitingu og
      * skilar verði vetingarinnar.
      */
-    public int getPrice() {
-        return price;
+    public int getVerd() {
+        return verd;
     }
 
     /**
@@ -51,6 +51,6 @@ public class Meals {
      * á milli þeirra.
      */
     public String toString() {
-        return String.format("%s - %dkr. ", meal, price);
+        return String.format("%s - %dkr. ", veiting, verd);
     }
 }
