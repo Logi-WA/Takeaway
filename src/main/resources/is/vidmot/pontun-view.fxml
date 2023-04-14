@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import is.vidmot.MatsedillView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+            prefWidth="500.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.vidmot.PontunController">
+    <children>
+        <BorderPane prefHeight="40.0" prefWidth="500.0" style="-fx-background-color: dimgrey;">
+            <right>
+                <Hyperlink fx:id="fxHyperText" alignment="CENTER_RIGHT" onAction="#fxInnskr"
+                           style="-fx-border-color: transparent; -fx-border-style: none;" text="Innskráning"
+                           textFill="DARKGRAY" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="10.0"/>
+                    </font>
+                    <padding>
+                        <Insets right="11.0"/>
+                    </padding>
+                </Hyperlink>
+            </right>
+        </BorderPane>
+        <VBox layoutX="14.0" layoutY="70.0" prefHeight="400.0" prefWidth="200.0">
+            <MatsedillView fx:id="matsedillView"
+                           style="-fx-border-color: grey; -fx-control-inner-background: lightgrey; -fx-fixed-cell-size: 30;"
+                           VBox.vgrow="ALWAYS"/>
+        </VBox>
+        <VBox layoutX="286.0" layoutY="70.0" prefHeight="250.0" prefWidth="200.0">
+            <ListView fx:id="karfaListView" style="-fx-background-color: lightgrey; -fx-border-color: grey;"
+                      VBox.vgrow="ALWAYS"/>
+        </VBox>
+        <Button layoutX="302.0" layoutY="336.0" mnemonicParsing="false" onAction="#fxSetjaKorfuHandler"
+                prefHeight="30.0" prefWidth="76.0"
+                style="-fx-background-radius: 0; -fx-background-insets: 0; -fx-background-color: grey;" text="BÆTA">
+            <font>
+                <Font name="Calibri Bold" size="15.0"/>
+            </font>
+        </Button>
+        <Button layoutX="394.0" layoutY="336.0" mnemonicParsing="false" onAction="#fxTakaKorfuHandler" prefHeight="30.0"
+                prefWidth="76.0" style="-fx-background-radius: 0; -fx-background-insets: 0; -fx-background-color: grey;"
+                text="EYÐA">
+            <font>
+                <Font name="Calibri Bold" size="15.0"/>
+            </font>
+        </Button>
+        <Label fx:id="heildarVerdLabel" layoutX="302.0" layoutY="439.0" prefHeight="30.0" prefWidth="76.0"
+               style="-fx-background-color: lightgrey;"/>
+        <Button layoutX="394.0" layoutY="439.0" mnemonicParsing="false" onAction="#fxGreidslaHandler" prefHeight="30.0"
+                prefWidth="76.0" style="-fx-background-insets: 0; -fx-background-radius: 0; -fx-background-color: lime;"
+                text="Greiða" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="16.0"/>
+            </font>
+        </Button>
+        <Label fx:id="fxWarning" layoutX="232.0" layoutY="374.0" opacity="0.0" prefHeight="53.0" prefWidth="108.0"
+               text="Vinsamlegast skráðu þig inn!" textFill="RED" wrapText="true">
+            <font>
+                <Font name="Calibri Bold" size="16.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

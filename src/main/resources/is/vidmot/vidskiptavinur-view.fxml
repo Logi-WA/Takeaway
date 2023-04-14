@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: lightgrey;"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="is.vidmot.VidskiptavinurDialog">
+    <children>
+        <TextField fx:id="fxName" layoutX="31.0" layoutY="94.0" prefHeight="50.0" prefWidth="272.0"
+                   promptText="Notendanafn"
+                   style="-fx-background-radius: 0; -fx-background-color: white; -fx-border-width: 3; -fx-border-color: grey;">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </TextField>
+        <Text fill="DIMGRAY" layoutX="31.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Innskráning">
+            <font>
+                <Font name="Calibri Bold" size="24.0"/>
+            </font>
+        </Text>
+        <Button layoutX="368.0" layoutY="434.0" mnemonicParsing="false" onAction="#fxOk" prefHeight="40.0"
+                prefWidth="104.0"
+                style="-fx-background-radius: 0; -fx-background-color: grey; -fx-background-insets: 0;" text="Áfram">
+            <font>
+                <Font name="Calibri Bold" size="18.0"/>
+            </font>
+        </Button>
+        <TextField fx:id="fxAddress" layoutX="31.0" layoutY="164.0" prefHeight="50.0" prefWidth="272.0"
+                   promptText="Heimilisfang"
+                   style="-fx-background-radius: 0; -fx-background-color: white; -fx-border-width: 3; -fx-border-color: grey;">
+            <font>
+                <Font size="20.0"/>
+            </font>
+        </TextField>
+        <Button layoutX="240.0" layoutY="434.0" mnemonicParsing="false" onAction="#fxCancel" prefHeight="40.0"
+                prefWidth="104.0"
+                style="-fx-background-radius: 0; -fx-background-color: grey; -fx-background-insets: 0;" text="Til baka">
+            <font>
+                <Font name="Calibri Bold" size="18.0"/>
+            </font>
+        </Button>
+    </children>
+</AnchorPane>
