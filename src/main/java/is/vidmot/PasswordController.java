@@ -1,6 +1,6 @@
 package is.vidmot;
 
-import is.vinnsla.Vidskiptavinur;
+import is.vinnsla.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -28,7 +28,7 @@ public class PasswordController {
     public Button fxCancel;
 
     //Tengsl við vinnslu
-    private Vidskiptavinur vidskiptavinur;
+    private Customer vidskiptavinur;
 
     /**
      * Sækir viðskiptavininn til þess að geta notað nafn hans.

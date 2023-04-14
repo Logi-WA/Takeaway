@@ -1,8 +1,8 @@
 package is.vidmot;
 
-import is.vinnsla.Karfa;
-import is.vinnsla.Veitingar;
-import is.vinnsla.Vidskiptavinur;
+import is.vinnsla.Cart;
+import is.vinnsla.Meals;
+import is.vinnsla.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
@@ -32,13 +32,13 @@ public class PontunController {
     @FXML
     private MatsedillView matsedillView;
     @FXML
-    private ListView<Veitingar> karfaListView;
+    private ListView<Meals> karfaListView;
     @FXML
     private Label heildarVerdLabel;
 
     //Tengsl við vinnslu
-    private Karfa karfa;
-    private Vidskiptavinur vidskiptavinur;
+    private Cart karfa;
+    private Customer vidskiptavinur;
 
 
     /**
@@ -49,7 +49,7 @@ public class PontunController {
      */
     @FXML
     private void fxSetjaKorfuHandler(ActionEvent event) {
-        Veitingar selectedMeal = matsedillView.getSelectionModel().getSelectedItem();
+        Meals selectedMeal = matsedillView.getSelectionModel().getSelectedItem();
         karfaListView.setItems(karfa.getKarfa());
         if (selectedMeal != null) {
             karfa.getKarfa().add(selectedMeal);
@@ -75,7 +75,7 @@ public class PontunController {
      *
      * @param vidskiptavinur - Viðskiptavins-hlutur til að ákvarða viðskiptavin klasans.
      */
-    public void setVidskiptavinur(Vidskiptavinur vidskiptavinur) {
+    public void setVidskiptavinur(Customer vidskiptavinur) {
         this.vidskiptavinur = vidskiptavinur;
     }
 
@@ -101,7 +101,7 @@ public class PontunController {
      * veitingar körfunnar.
      */
     public void initialize() {
-        karfa = new Karfa();
+        karfa = new Cart();
         karfa.getHeildarVerd().addListener((observable, oldValue, newValue) -> {
             heildarVerdLabel.textProperty().bind(karfa.heildarVerdProperty().asString().concat("kr."));
         });
@@ -129,7 +129,7 @@ public class PontunController {
      *
      * @return - Skilar körfuhlutinum karfa.
      */
-    public Karfa getKarfa() {
+    public Cart getKarfa() {
         return karfa;
     }
 
@@ -138,7 +138,7 @@ public class PontunController {
      *
      * @return - Skilar viðskiptavins-hlutinum viðskiptavinur
      */
-    public Vidskiptavinur getVidskiptavinur() {
+    public Customer getVidskiptavinur() {
         return vidskiptavinur;
     }
 }

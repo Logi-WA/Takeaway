@@ -1,7 +1,7 @@
 package is.vidmot;
 
-import is.vinnsla.Matsedill;
-import is.vinnsla.Veitingar;
+import is.vinnsla.Menu;
+import is.vinnsla.Meals;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
 
@@ -19,7 +19,7 @@ import java.io.IOException;
  *
  *****************************************************************************/
 
-public class MatsedillView extends ListView<Veitingar> {
+public class MatsedillView extends ListView<Meals> {
 
     /**
      * Hleður matsedill-view.fxml og setur rót og controller þess.
@@ -34,7 +34,7 @@ public class MatsedillView extends ListView<Veitingar> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Matsedill matsedill = new Matsedill();
+        Menu matsedill = new Menu();
         matsedill.setGogn();
         setItems(matsedill.getVeitingar());
     }
