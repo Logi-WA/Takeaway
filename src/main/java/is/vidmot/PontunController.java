@@ -65,12 +65,8 @@ public class PontunController {
      */
     @FXML
     private void fxTakaKorfuHandler(ActionEvent event) {
-        Veitingar selectedMeal = matsedillView.getSelectionModel().getSelectedItem();
-        karfaListView.setItems(karfa.getKarfa());
-        if (selectedMeal != null) {
-            karfa.getKarfa().remove(selectedMeal);
-        }
-
+        if (karfaListView.getSelectionModel().getSelectedItems() != null)
+            karfaListView.getItems().remove(karfaListView.getSelectionModel().getSelectedItem());
     }
 
     /**
