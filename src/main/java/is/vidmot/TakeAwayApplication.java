@@ -24,9 +24,9 @@ public class TakeAwayApplication extends Application {
     public void start(Stage stage) throws IOException {
         var scene = new Scene(new Pane());
         ViewSwitcher.setScene(scene);
-        ViewSwitcher.switchTo(View.PONTUN);
+        ViewSwitcher.switchTo(View.ORDER);
         ViewSwitcher.setScene(scene);
-        stage.setTitle("Panta Heim");
+        stage.setTitle("Order Home");
         stage.setScene(scene);
         stage.show();
     }

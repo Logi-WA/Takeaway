@@ -17,22 +17,22 @@ import javafx.beans.property.StringProperty;
  *
  *****************************************************************************/
 
-public class Vidskiptavinur {
+public class Customer {
     //tilviksbreytur
-    private StringProperty nafn;// = new SimpleStringProperty();
-    private StringProperty hFang;// = new SimpleStringProperty();
+    private StringProperty nameProperty;// = new SimpleStringProperty();
+    private StringProperty addressProperty;// = new SimpleStringProperty();
 
     /**
      * Smiður til að skilgreina nýjan viðskiptavin.
      * Tekur ákvarðaða nafn og heimilisfang viðskiptavins
      * og lætur breyturnar verða að breytum klasans.
      *
-     * @param nafn  - Nafn viðskiptavins, sláð inn í vidskiptavinur-view.fxml
-     * @param hFang - Heimilisfang viðskiptavins, sláð inn í vidskiptavinur-view.fxml
+     * @param nameProperty    - Nafn viðskiptavins, sláð inn í customer-view.fxml
+     * @param addressProperty - Heimilisfang viðskiptavins, sláð inn í customer-view.fxml
      */
-    public Vidskiptavinur(String nafn, String hFang) {
-        this.nafn = new SimpleStringProperty(nafn);
-        this.hFang = new SimpleStringProperty(hFang);
+    public Customer(String nameProperty, String addressProperty) {
+        this.nameProperty = new SimpleStringProperty(nameProperty);
+        this.addressProperty = new SimpleStringProperty(addressProperty);
     }
 
     /**
@@ -42,28 +42,28 @@ public class Vidskiptavinur {
      * og heimilisfang með kommu á milli þeirra.
      */
     public String toString() {
-        return "Vidskiptavinur{" +
-                "nafn=" + nafn +
-                ", hFang=" + hFang +
+        return "Customer{" +
+                "Name=" + nameProperty +
+                ", Address=" + addressProperty +
                 '}';
     }
 
     /**
      * Aðferð til að sækja heimilisfang viðskiptavins.
      *
-     * @return - Skilar heimilisfangi, ákvarðað í vidskiptavinur-view.fxml
+     * @return - Skilar heimilisfangi, ákvarðað í customer-view.fxml
      */
-    public String gethFang() {
-        return hFang.get();
+    public String getAddress() {
+        return addressProperty.get();
     }
 
     /**
      * Aðferð til að sækja nafn viðskiptavins.
      *
-     * @return Skilar nafni viðskiptavins, ákvarðað í vidskiptavinur-view.fxml
+     * @return Skilar nafni viðskiptavins, ákvarðað í customer-view.fxml
      */
-    public String getNafn() {
-        return nafn.get();
+    public String getName() {
+        return nameProperty.get();
     }
 
     /**
@@ -71,7 +71,7 @@ public class Vidskiptavinur {
      *
      * @return - Skilar StringProperty-inu nafn.
      */
-    public StringProperty nafnProperty() {
-        return nafn;
+    public StringProperty nameProperty() {
+        return nameProperty;
     }
 }

@@ -1,6 +1,6 @@
 package is.vidmot;
 
-import is.vinnsla.Vidskiptavinur;
+import is.vinnsla.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -28,7 +28,7 @@ public class PasswordController {
     public Button fxCancel;
 
     //Tengsl við vinnslu
-    private Vidskiptavinur vidskiptavinur;
+    private Customer customer;
 
     /**
      * Sækir viðskiptavininn til þess að geta notað nafn hans.
@@ -37,10 +37,10 @@ public class PasswordController {
      * þá er nafn viðskiptavins sett sem texti Labels-ins.
      */
     public void initialize() {
-        PontunController pontunController = (PontunController) ViewSwitcher.lookup(View.PONTUN);
-        vidskiptavinur = pontunController.getVidskiptavinur();
-        if (vidskiptavinur != null) {
-            fxClient.textProperty().bind(vidskiptavinur.nafnProperty());
+        OrderController orderController = (OrderController) ViewSwitcher.lookup(View.ORDER);
+        customer = orderController.getCustomer();
+        if (customer != null) {
+            fxClient.textProperty().bind(customer.nameProperty());
         } else {
             fxClient.setText("Unknown Client");
         }
@@ -52,7 +52,7 @@ public class PasswordController {
      * @param event - atburðurinn sem viðmótshluturinn fékk.
      */
     public void fxCancel(ActionEvent event) {
-        ViewSwitcher.switchTo(View.PONTUN);
+        ViewSwitcher.switchTo(View.ORDER);
     }
 
     /**
@@ -62,6 +62,6 @@ public class PasswordController {
      * @param event - atburðurinn sem viðmótshluturinn fékk.
      */
     public void fxCancel1(ActionEvent event) {
-        ViewSwitcher.switchTo(View.PONTUN);
+        ViewSwitcher.switchTo(View.ORDER);
     }
 }

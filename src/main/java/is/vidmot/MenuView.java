@@ -1,7 +1,7 @@
 package is.vidmot;
 
-import is.vinnsla.Matsedill;
-import is.vinnsla.Veitingar;
+import is.vinnsla.Meals;
+import is.vinnsla.Menu;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
 
@@ -19,14 +19,14 @@ import java.io.IOException;
  *
  *****************************************************************************/
 
-public class MatsedillView extends ListView<Veitingar> {
+public class MenuView extends ListView<Meals> {
 
     /**
-     * Hleður matsedill-view.fxml og setur rót og controller þess.
+     * Hleður menu-view.fxml og setur rót og controller þess.
      * Setur inn gögn og sækir veitingar.
      */
-    public MatsedillView() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("matsedill-view.fxml"));
+    public MenuView() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("menu-view.fxml"));
         loader.setRoot(this);
         loader.setController(this);
         try {
@@ -34,8 +34,8 @@ public class MatsedillView extends ListView<Veitingar> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Matsedill matsedill = new Matsedill();
-        matsedill.setGogn();
-        setItems(matsedill.getVeitingar());
+        Menu menu = new Menu();
+        menu.setData();
+        setItems(menu.getMeals());
     }
 }

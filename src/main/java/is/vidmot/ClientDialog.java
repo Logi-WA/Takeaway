@@ -1,6 +1,6 @@
 package is.vidmot;
 
-import is.vinnsla.Vidskiptavinur;
+import is.vinnsla.Customer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -15,14 +15,14 @@ import javafx.scene.control.TextField;
  *     ATH! ÉG NÁÐI EKKI AÐ GERA DIALOG EINS OG VAR BEÐIÐ UM EN KÓÐINN SEM ÉG HAFÐI
  *     ÞAR TIL AÐ ÉG GAFST UPP ER Í BLÁU NEÐST Í ÞESSUM KLASA. ÉG GAT EKKI ÝTT Á
  *     TAKKANA Í DIALOGINUM OG FANN EKKI LEIÐ TIL AÐ LAGFÆRA OG HALDA ÁFRAM.
- *     Þar af leiðandi ákvað ég að gera VidskiptavinurDialog og það sem tengist
+ *     Þar af leiðandi ákvað ég að gera CustomerDialog og það sem tengist
  *     viðskiptavin í kerfinu án þess að nota dialog.
  *
  *  Lýsing  : Stýring fyrir senu til þess að skrá sig sem viðskiptavin
  *
  *****************************************************************************/
 
-public class VidskiptavinurDialog {
+public class ClientDialog {
     //Viðmótsbreytur
     @FXML
     public TextField fxName;
@@ -33,13 +33,13 @@ public class VidskiptavinurDialog {
     @FXML
     public Button fxCancel;
     //Tengsl við vinnslu
-    private Vidskiptavinur vidskiptavinur;
+    private Customer customer;
 
     /**
      * Þegar ýtt er á takkann til að halda áfram þá er tekið nafn
      * og heimilisfang sem voru slegin inn í text-field og skilgreint
      * nýjan viðskiptavin. Svo er tengt viðskiptavininn við
-     * PontunController, breytt svo texta Hyperlinks-ins sem notaður
+     * OrderController, breytt svo texta Hyperlinks-ins sem notaður
      * er til þess að skrá sig inn, ef það kom viðvörun um að skrá
      * sig inn hverfur hún og svo er skipt aftur í pontun-view.
      */
@@ -47,12 +47,12 @@ public class VidskiptavinurDialog {
     private void fxOk() {
         String name = fxName.getText();
         String address = fxAddress.getText();
-        Vidskiptavinur vidskiptavinur = new Vidskiptavinur(name, address);
-        PontunController pontunController = (PontunController) ViewSwitcher.controllers.get(View.PONTUN);
-        pontunController.setVidskiptavinur(vidskiptavinur);
-        pontunController.fxHyperText.setText("Velkomin " + vidskiptavinur.getNafn());
-        pontunController.fxWarning.setOpacity(0.0);
-        ViewSwitcher.switchTo(View.PONTUN);
+        Customer customer = new Customer(name, address);
+        OrderController orderController = (OrderController) ViewSwitcher.controllers.get(View.ORDER);
+        orderController.setCustomer(customer);
+        orderController.fxHyperText.setText("Welcome " + customer.getName());
+        orderController.fxWarning.setOpacity(0.0);
+        ViewSwitcher.switchTo(View.ORDER);
     }
 
     /**
@@ -61,14 +61,14 @@ public class VidskiptavinurDialog {
      */
     @FXML
     private void fxCancel() {
-        ViewSwitcher.switchTo(View.PONTUN);
+        ViewSwitcher.switchTo(View.ORDER);
     }
 
     /**
      * Hér að neðan er tilraun að DialogPane.
      */
 /*
-public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
+public class CustomerDialog extends Dialog<Customer> {
 
  */
 
@@ -80,13 +80,13 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
     public TextField fxNafn;
     public TextField fxhFang;
 
-    public VidskiptavinurDialog(Vidskiptavinur vidskiptavinur) {
+    public CustomerDialog(Customer customer) {
         setTitle("Log In");
         setResizable(false);
         setHeaderText("Log In");
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("vidskiptavinur-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("customer-view.fxml"));
             loader.setController(this);
             DialogPane dialogPane = loader.load();
             setDialogPane(dialogPane);
@@ -108,7 +108,7 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
 
         setResultConverter(buttonType -> {
             if (buttonType == ButtonType.OK) {
-                return new Vidskiptavinur(fxNafn.getText(), fxhFang.getText());
+                return new Customer(fxNafn.getText(), fxhFang.getText());
             }
             return null;
         });
@@ -128,8 +128,8 @@ public class VidskiptavinurDialog extends Dialog<Vidskiptavinur> {
                 if (buttonType == ButtonType.OK) {
                     String nafn = fxNafn.getText();
                     String heimilisfang = fxhFang.getText();
-                    Vidskiptavinur vidskiptavinur = new Vidskiptavinur(nafn, heimilisfang);
-                    return vidskiptavinur;
+                    Customer customer = new Customer(nafn, heimilisfang);
+                    return customer;
                 }
                 return null;
             });

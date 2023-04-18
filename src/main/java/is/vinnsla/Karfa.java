@@ -19,28 +19,28 @@ import javafx.collections.ObservableList;
  *
  *****************************************************************************/
 
-public class Karfa extends Matsedill {
-    private ObservableList<Veitingar> karfa = FXCollections.observableArrayList();
-    private final IntegerProperty heildarVerd = new SimpleIntegerProperty(0);
+public class Cart extends Menu {
+    private ObservableList<Meals> cart = FXCollections.observableArrayList();
+    private final IntegerProperty totalPrice = new SimpleIntegerProperty(0);
 
     /**
      * Skilar heiltölueiginleika sem heildarverð
      *
      * @return - Skilar heildarverði
      */
-    public IntegerProperty heildarVerdProperty() {
-        return heildarVerd;
+    public IntegerProperty totalPriceProperty() {
+        return totalPrice;
     }
 
     /**
      * Smiður til að gera körfu. Hlustar á hvort vöru var bætt
      * við og kallar á uppdfærslu heildarverðs körfu.
      */
-    public Karfa() {
-        karfa.addListener((ListChangeListener<Veitingar>) c -> {
+    public Cart() {
+        cart.addListener((ListChangeListener<Meals>) c -> {
             while (c.next()) {
                 if (c.wasAdded() || c.wasRemoved()) {
-                    updateHeildarVerd();
+                    updateTotalPrice();
                 }
             }
         });
@@ -50,12 +50,12 @@ public class Karfa extends Matsedill {
      * Aðferð til að reikna heildarverð körfu. Leggur
      * saman verð allra veitinga í körfu.
      */
-    private void updateHeildarVerd() {
+    private void updateTotalPrice() {
         int total = 0;
-        for (Veitingar v : karfa) {
-            total += v.getVerd();
+        for (Meals m : cart) {
+            total += m.getPrice();
         }
-        heildarVerd.set(total);
+        totalPrice.set(total);
     }
 
     /**
@@ -64,8 +64,8 @@ public class Karfa extends Matsedill {
      *
      * @return - Skilar körfulistanum.
      */
-    public ObservableList<Veitingar> getKarfa() {
-        return karfa;
+    public ObservableList<Meals> getCart() {
+        return cart;
     }
 
     /**
@@ -74,7 +74,7 @@ public class Karfa extends Matsedill {
      *
      * @return - Skilar heildarverði.
      */
-    public IntegerProperty getHeildarVerd() {
-        return heildarVerd;
+    public IntegerProperty getTotalPrice() {
+        return totalPrice;
     }
 }
