@@ -37,15 +37,15 @@ public class Matsedill {
         meals.add(cheeseburg);
         Meals bulluBurger = new Meals("Búlluborgari, 200gr", 1290);
         meals.add(bulluBurger);
-        Meals smallFries = new Meals("Litlar franskar, 300gr", 560);
+        Meals smallFries = new Meals("Small fries, 300gr", 560);
         meals.add(smallFries);
-        Meals largeFries = new Meals("Stórar franskar, 600gr", 990);
+        Meals largeFries = new Meals("Large fries, 600gr", 990);
         meals.add(largeFries);
         Meals coke = new Meals("Coca-Cola, 330ml", 290);
         meals.add(coke);
         Meals pax = new Meals("Pepsi Max, 500ml", 390);
         meals.add(pax);
-        Meals teilari = new Meals("Kokteilsósa, 200ml", 290);
+        Meals teilari = new Meals("Mayo, 200ml", 290);
         meals.add(teilari);
 
     }
