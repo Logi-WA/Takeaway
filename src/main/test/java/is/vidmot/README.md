@@ -1,0 +1,1 @@
+- As we were instructed we did not make test cases for vidmot as the course did not teach how we should test javafx

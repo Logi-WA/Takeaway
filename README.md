@@ -19,7 +19,7 @@
 - `src/main/java/is/vinnsla` contains all the front end part of the project for futher detail of the classes :  [Markdown](src/site/markdown/markdown.md)
     - `Cart.java ` contains all the information about what is in the cart and if something is added
     - `Customer.java` Contains the name of the customer as well as his address
-    - `Matsedill.java` contains all of the items that are to be put in the manu
+
     - `Meals.java` takes in the meal and the price of it
     - `Menu.java` allows you to add the meal to the display
 
@@ -27,6 +27,7 @@
 
 - `src/test/java` contains a package that has an Alltests class that can perform all the test in the package
     - `is.vinnsla` contains all tests for the backend of the project
+    - `is.vidmot` as we were instructed we did not make test cases for vidmot as the course did not teach  how we should test javafx
 
 ## Markdown
 
