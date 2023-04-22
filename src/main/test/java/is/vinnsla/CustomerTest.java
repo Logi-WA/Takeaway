@@ -1,6 +1,5 @@
-package is;
+package is.vinnsla;
 
-import is.vinnsla.Customer;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
