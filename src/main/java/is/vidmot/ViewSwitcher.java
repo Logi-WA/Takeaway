@@ -8,11 +8,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Almas Baimagambetov (almaslvl@gmail.com)
- * <p>
- * EÞH - changed to include caching of controllers
- */
 public class ViewSwitcher {
     public static final Map<View, Parent> cache = new HashMap<>();
     public static final Map<View, Object> controllers = new HashMap<>();
