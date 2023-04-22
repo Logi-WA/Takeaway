@@ -1,5 +1,9 @@
 # HBV202GFinalAssignment
 
+## How to run
+
+- To run this application we have mad a jlink (we decided to do that because our jar fil would not let us run javafx through  the jar file but that file can be found in the target directory) but to run the jlink you go [Here](target/Takeaway/bin/Takeaway-launcher) and run that file to run the project
+
 ## Frontend
 
 
