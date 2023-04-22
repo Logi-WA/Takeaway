@@ -30,6 +30,6 @@ You can find the markdown here : [Markdown](src/site/markdown/markdown.md)
 
 ## License
 
-- This project is licensed under the [MIT License](src/README.md). A copy of the license can be found in the LICENSE
-  file. The MIT License allows for free use, modification, and distribution of this software, subject to the terms and
+- This project is licensed under the [MIT License](src/README.md). The MIT License allows for free use, modification,
+  and distribution of this software, subject to the terms and
   conditions specified in the license.
