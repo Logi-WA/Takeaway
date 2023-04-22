@@ -35,7 +35,7 @@ public class Matsedill {
         meals.add(hawaiian);
         Meals cheeseburg = new Meals("Cheeseburger, 150gr", 990);
         meals.add(cheeseburg);
-        Meals bulluBurger = new Meals("Búlluborgari, 200gr", 1290);
+        Meals bulluBurger = new Meals("Búlluburger, 200gr", 1290);
         meals.add(bulluBurger);
         Meals smallFries = new Meals("Small fries, 300gr", 560);
         meals.add(smallFries);
