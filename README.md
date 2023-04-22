@@ -2,8 +2,8 @@
 
 ## Frontend
 
-
-- `src/main/java/is/vidmot` contains all the front end part of the project for futher detail of the classes :  [Markdown](src/site/markdown/markdown.md)
+- `src/main/java/is/vidmot` contains all the front end part of the project for futher detail of the
+  classes :  [Markdown](src/site/markdown/markdown.md)
 
     - `ClientDialog.java` contains the dialog for user to register
     - `MenuView.java` loads the `menu-view.fxml` and puts the controller and root as well as it puts in the meals
@@ -16,12 +16,12 @@
 
 ## Backend
 
-- `src/main/java/is/vinnsla` contains all the front end part of the project for futher detail of the classes :  [Markdown](src/site/markdown/markdown.md)
+- `src/main/java/is/vinnsla` contains all the front end part of the project for futher detail of the
+  classes :  [Markdown](src/site/markdown/markdown.md)
     - `Cart.java ` contains all the information about what is in the cart and if something is added
-    - `Customer.java` Contains the name of the customer as well as his address
-    - `Matsedill.java` contains all of the items that are to be put in the manu
+    - `Customer.java` contains the name of the customer as well as his address
     - `Meals.java` takes in the meal and the price of it
-    - `Menu.java` allows you to add the meal to the display
+    - `Menu.java` allows you to add a meal to the display and contains all of the items that are to be displayed
 
 ## Testcases
 
